@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyButtonUI.iml" filepath="$PROJECT_DIR$/MyButtonUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uibutton/uibutton.iml" filepath="$PROJECT_DIR$/uibutton/uibutton.iml" />
+    </modules>
+  </component>
+</project>

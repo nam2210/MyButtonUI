@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyButton">
+        <attr name="type">
+            <enum name="stroke" value="0"/>
+            <enum name="solid" value="1"/>
+        </attr>
+        <attr name="strokeColor" format="color"/>
+        <attr name="solidColor" format="color"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="radiusCorner" format="dimension"/>
+    </declare-styleable>
+</resources>
