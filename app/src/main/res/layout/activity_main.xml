@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SOLID"
+        android:visibility="invisible"
         app:type="solid"
         app:solidColor="@color/red"
         app:radiusCorner="8dp"/>
@@ -26,9 +27,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="STROKE"
+        android:visibility="invisible"
         app:type="stroke"
         app:strokeColor="@color/red"
         app:strokeWidth="2dp"
         app:radiusCorner="8dp"/>
+
+    <com.hnam.uibutton.MyEditText
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:text="SOLID"
+        android:inputType="text"
+        android:lines="1"
+        android:textSize="12sp"
+        android:padding="2dp"
+        android:gravity="center"
+        app:type="solid"
+        app:solidColor="#33000000"
+        app:radiusCorner="32dp"/>
 
 </LinearLayout>

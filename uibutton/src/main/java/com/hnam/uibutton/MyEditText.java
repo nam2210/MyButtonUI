@@ -10,16 +10,16 @@ import android.graphics.drawable.StateListDrawable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.StateSet;
+import android.widget.EditText;
 
 /**
- * Created by hnam on 12/21/2016.
+ * Created by nampham on 3/14/17.
  */
 
-public class MyButton extends android.support.v7.widget.AppCompatButton{
+public class MyEditText extends android.support.v7.widget.AppCompatEditText {
 
     private static final int STROKE = 0;
     public static final int SOLID = 1;
-    private final int DEFAULT_BG = R.drawable.bg_default;
 
     private int mType = SOLID;
     private int mStrokeColor;
@@ -28,20 +28,20 @@ public class MyButton extends android.support.v7.widget.AppCompatButton{
     private float mRadiusCorner;
     private Resources mResources;
 
-    public MyButton(Context context) {
+    public MyEditText(Context context) {
         super(context);
         initDefaultValue();
         renderUi();
     }
 
-    public MyButton(Context context, AttributeSet attrs) {
+    public MyEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         initDefaultValue();
         initAttrs(attrs);
         renderUi();
     }
 
-    public MyButton(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MyEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initDefaultValue();
         initAttrs(attrs);
@@ -105,13 +105,13 @@ public class MyButton extends android.support.v7.widget.AppCompatButton{
         maskDrawable.setColor(maskColor);
         maskDrawable.setCornerRadius(mRadiusCorner);
 
-        //create StateListDrawable
-        StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, maskDrawable);
-        stateListDrawable.addState(StateSet.WILD_CARD, strokeBg);
+//        //create StateListDrawable
+//        StateListDrawable stateListDrawable = new StateListDrawable();
+//        stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, maskDrawable);
+//        stateListDrawable.addState(StateSet.WILD_CARD, strokeBg);
 
         //set background
-        setBackground(stateListDrawable);
+        setBackground(strokeBg);
     }
 
     private void renderSolidUi(){
@@ -129,12 +129,12 @@ public class MyButton extends android.support.v7.widget.AppCompatButton{
         maskDrawable.setColor(maskColor);
         maskDrawable.setCornerRadius(mRadiusCorner);
 
-        //create StateListDrawable
-        StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, maskDrawable);
-        stateListDrawable.addState(StateSet.WILD_CARD, solidBg);
+//        //create StateListDrawable
+//        StateListDrawable stateListDrawable = new StateListDrawable();
+//        stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, maskDrawable);
+//        stateListDrawable.addState(StateSet.WILD_CARD, solidBg);
 
         //set background
-        setBackground(stateListDrawable);
+        setBackground(solidBg);
     }
 }
