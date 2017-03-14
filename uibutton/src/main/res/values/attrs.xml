@@ -9,5 +9,6 @@
         <attr name="solidColor" format="color"/>
         <attr name="strokeWidth" format="dimension"/>
         <attr name="radiusCorner" format="dimension"/>
+        <attr name="fontName" format="string"/>
     </declare-styleable>
 </resources>

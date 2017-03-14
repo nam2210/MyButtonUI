@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
@@ -60,6 +61,13 @@ public class MyButton extends android.support.v7.widget.AppCompatButton{
                     getResources().getDimension(R.dimen.default_stoke_width));
             mRadiusCorner = a.getDimension(R.styleable.MyButton_radiusCorner,
                     getResources().getDimension(R.dimen.default_radius_corner));
+
+            //set typeface
+            String fontName = a.getString(R.styleable.MyButton_fontName);
+            if (fontName != null) {
+                Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + fontName);
+                setTypeface(tf);
+            }
             a.recycle();
         }
     }
