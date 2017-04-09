@@ -53,13 +53,11 @@
         app:radiusCorner="32dp"/>
 
     <com.hnam.uibutton.MyTextView
+        android:id="@+id/tv"
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Đã duyệt"
-        android:padding="4dp"
-        app:type="solid"
-        app:solidColor="#00ff00"
-        app:radiusCorner="4dp"/>
+        android:padding="4dp" />
 
 </LinearLayout>

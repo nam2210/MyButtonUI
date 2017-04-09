@@ -77,6 +77,31 @@ public class MyTextView extends AppCompatTextView {
         mRadiusCorner = getResources().getDimension(R.dimen.default_radius_corner);
     }
 
+    public void setType(int type){
+        mType = type;
+        renderUi();
+    }
+
+    public void setStrokeColor(int mStrokeColor) {
+        this.mStrokeColor = mStrokeColor;
+        renderUi();
+    }
+
+    public void setSolidColor(int mSolidColor) {
+        this.mSolidColor = mSolidColor;
+        renderUi();
+    }
+
+    public void setStrokeWidth(int mStrokeWidth) {
+        this.mStrokeWidth = mStrokeWidth;
+        renderUi();
+    }
+
+    public void setRadiusCorner(float mRadiusCorner) {
+        this.mRadiusCorner = mRadiusCorner;
+        renderUi();
+    }
+
     private void renderUi(){
         switch (mType) {
             case STROKE: {
