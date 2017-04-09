@@ -17,6 +17,7 @@ public class MyTextView extends AppCompatTextView {
 
     private static final int STROKE = 0;
     public static final int SOLID = 1;
+    public static final int NORMAL = 2;
 
     private int mType = SOLID;
     private int mStrokeColor;
@@ -70,11 +71,11 @@ public class MyTextView extends AppCompatTextView {
 
     private void initDefaultValue(){
         mResources = getResources();
-        mType = SOLID;
+        mType = NORMAL;
         mStrokeColor = ContextCompat.getColor(getContext(), android.R.color.black);
         mSolidColor = ContextCompat.getColor(getContext(), android.R.color.black);
-        mStrokeWidth = (int) getResources().getDimension(R.dimen.default_stoke_width);
-        mRadiusCorner = getResources().getDimension(R.dimen.default_radius_corner);
+        mStrokeWidth = 0;
+        mRadiusCorner = 0;
     }
 
     public void setType(int type){
@@ -109,8 +110,8 @@ public class MyTextView extends AppCompatTextView {
                 break;
             }
             case SOLID:
-            default: {
                 renderSolidUi();
+            default: {
                 break;
             }
         }
