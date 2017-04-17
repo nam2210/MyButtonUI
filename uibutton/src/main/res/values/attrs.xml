@@ -4,6 +4,7 @@
         <attr name="type">
             <enum name="stroke" value="0"/>
             <enum name="solid" value="1"/>
+            <enum name="normal" value="2"/>
         </attr>
         <attr name="strokeColor" format="color"/>
         <attr name="solidColor" format="color"/>

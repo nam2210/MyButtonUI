@@ -18,11 +18,11 @@ import android.util.StateSet;
 
 public class MyButton extends android.support.v7.widget.AppCompatButton{
 
-    private static final int STROKE = 0;
+    public static final int STROKE = 0;
     public static final int SOLID = 1;
-    private final int DEFAULT_BG = R.drawable.bg_default;
+    public static final int NORMAL = 2;
 
-    private int mType = SOLID;
+    private int mType = NORMAL;
     private int mStrokeColor;
     private int mSolidColor;
     private int mStrokeWidth;
@@ -52,15 +52,15 @@ public class MyButton extends android.support.v7.widget.AppCompatButton{
     private void initAttrs(AttributeSet attrs) {
         if (attrs != null){
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MyButton);
-            mType = a.getInt(R.styleable.MyButton_type, SOLID);
+            mType = a.getInt(R.styleable.MyButton_type, NORMAL);
             mStrokeColor = a.getColor(R.styleable.MyButton_strokeColor,
-                    ContextCompat.getColor(getContext(), android.R.color.black));
+                    ContextCompat.getColor(getContext(), android.R.color.transparent));
             mSolidColor = a.getColor(R.styleable.MyButton_solidColor,
-                    ContextCompat.getColor(getContext(), android.R.color.black));
+                    ContextCompat.getColor(getContext(), android.R.color.transparent));
             mStrokeWidth = (int) a.getDimension(R.styleable.MyButton_strokeWidth,
-                    getResources().getDimension(R.dimen.default_stoke_width));
+                    getResources().getDimension(R.dimen.default_value));
             mRadiusCorner = a.getDimension(R.styleable.MyButton_radiusCorner,
-                    getResources().getDimension(R.dimen.default_radius_corner));
+                    getResources().getDimension(R.dimen.default_value));
 
             //set typeface
             String fontName = a.getString(R.styleable.MyButton_fontName);
@@ -74,11 +74,11 @@ public class MyButton extends android.support.v7.widget.AppCompatButton{
 
     private void initDefaultValue(){
         mResources = getResources();
-        mType = SOLID;
-        mStrokeColor = ContextCompat.getColor(getContext(), android.R.color.black);
-        mSolidColor = ContextCompat.getColor(getContext(), android.R.color.black);
-        mStrokeWidth = (int) getResources().getDimension(R.dimen.default_stoke_width);
-        mRadiusCorner = getResources().getDimension(R.dimen.default_radius_corner);
+        mType = NORMAL;
+        mStrokeColor = ContextCompat.getColor(getContext(), android.R.color.transparent);
+        mSolidColor = ContextCompat.getColor(getContext(), android.R.color.transparent);
+        mStrokeWidth = (int) getResources().getDimension(R.dimen.default_value);
+        mRadiusCorner = (int) getResources().getDimension(R.dimen.default_value);
     }
 
     private void renderUi(){
@@ -87,9 +87,11 @@ public class MyButton extends android.support.v7.widget.AppCompatButton{
                 renderStrokeUi();
                 break;
             }
-            case SOLID:
-            default: {
+            case SOLID:{
                 renderSolidUi();
+                break;
+            }
+            default: {
                 break;
             }
         }

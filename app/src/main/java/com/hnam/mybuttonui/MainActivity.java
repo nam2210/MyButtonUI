@@ -14,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MyTextView tv = (MyTextView) findViewById(R.id.tv);
-        tv.setType(MyTextView.SOLID);
-        tv.setRadiusCorner(getResources().getDimension(R.dimen.spacing_4dp));
-        tv.setSolidColor(ContextCompat.getColor(this, R.color.green_color));
+        //tv.setType(MyTextView.SOLID);
+        //tv.setRadiusCorner(getResources().getDimension(R.dimen.spacing_4dp));
+        //tv.setSolidColor(ContextCompat.getColor(this, R.color.green_color));
 
     }
 }
